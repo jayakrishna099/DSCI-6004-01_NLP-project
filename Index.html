@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Classification: AI vs Human</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .input-container {
+            margin-bottom: 20px;
+        }
+        .result-container {
+            margin-top: 20px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #resetButton {
+            background-color: #f44336;
+        }
+        #resetButton:hover {
+            background-color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Text Classification: AI vs Human</h2>
+        <div class="input-container">
+            <label for="inputText">Enter your text:</label>
+            <textarea id="inputText" rows="5" style="width: 100%;"></textarea>
+        </div>
+        <div>
+            <button onclick="classifyText()">Classify Text</button>
+            <button id="resetButton" onclick="resetFields()">Reset</button>
+        </div>
+        <div class="result-container">
+            <h3>Prediction:</h3>
+            <p id="predictionResult">Please enter a text to get the prediction.</p>
+        </div>
+    </div>
+
+    <script>
+        function classifyText() {
+            const inputText = document.getElementById("inputText").value;
+            
+            // Example mock classification (replace with your model prediction logic)
+            let prediction = "";
+            if (inputText.includes("AI")) {
+                prediction = "AI generated";
+            } else {
+                prediction = "Human";
+            }
+
+            // Display the prediction result
+            document.getElementById("predictionResult").innerText = `Prediction: ${prediction}`;
+        }
+
+        function resetFields() {
+            // Reset the text input and prediction result
+            document.getElementById("inputText").value = "";
+            document.getElementById("predictionResult").innerText = "Please enter a text to get the prediction.";
+        }
+    </script>
+</body>
+</html>
